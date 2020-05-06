@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.compile_sdk_version
+    buildToolsVersion rootProject.build_tools_version
+
+    defaultConfig {
+        minSdkVersion rootProject.min_sdk_version
+        targetSdkVersion rootProject.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout_version"
+    implementation "com.google.android.material:material:$rootProject.material_version"
+
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide_version"
+    implementation "androidx.room:room-common:$rootProject.room_version"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3_version"
+    // implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit2_version"
+    // implementation "io.reactivex.rxjava3:rxjava:$rootProject.rxjava3_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rootProject.rxandroid3_version"
+    implementation "pub.devrel:easypermissions:$rootProject.easy_permissions_version"
+    implementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanary_version"
+    implementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakcanary_version"
+    implementation "me.jessyan:autosize:$rootProject.autosize_version"
+
+    testImplementation "junit:junit:$rootProject.junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espresso_core_version"
+}

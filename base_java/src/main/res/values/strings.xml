@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">base_java</string>
+    <string name="cancel">取消</string>
+    <string name="loading">加载中…</string>
+    <string name="back">back</string>
+    <string name="menu">menu</string>
+</resources>

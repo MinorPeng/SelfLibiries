@@ -1,0 +1,4 @@
+rootProject.name='SelfLibiries'
+include ':app'
+include ':base_java'
+include ':base_kotlin'
