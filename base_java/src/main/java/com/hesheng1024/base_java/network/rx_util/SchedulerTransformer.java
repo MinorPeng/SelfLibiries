@@ -1,4 +1,4 @@
-package com.hesheng1024.base_java.network.util;
+package com.hesheng1024.base_java.network.rx_util;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.ObservableTransformer;

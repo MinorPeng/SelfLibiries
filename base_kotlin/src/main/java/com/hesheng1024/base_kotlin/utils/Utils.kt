@@ -2,6 +2,7 @@ package com.hesheng1024.base.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.net.ConnectivityManager
 import android.util.Log
 import android.widget.Toast
 import com.hesheng1024.base_kotlin.BuildConfig
@@ -13,6 +14,15 @@ import java.util.*
  * @author hesheng1024
  * @date 2020/4/20 8:44
  */
+
+fun isNetConnected(context: Context?): Boolean {
+    if (context == null) {
+        return false
+    }
+    val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkInfo = connectivityManager.activeNetworkInfo ?: return false
+    return networkInfo.isConnected
+}
 
 /*------------------------------ DensityUtil ------------------------------*/
 fun dp2px(context: Context, dpValue: Float): Int {

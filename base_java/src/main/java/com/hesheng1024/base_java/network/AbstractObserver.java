@@ -11,8 +11,12 @@ import androidx.annotation.Nullable;
 import com.hesheng1024.base_java.R;
 import com.hesheng1024.base_java.utils.LogUtil;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * @author hesheng1024
@@ -47,13 +51,13 @@ public abstract class AbstractObserver<T> implements Observer<T> {
     }
 
     @Override
-    public void onSubscribe(Disposable d) {
-        LogUtil.e("onSubscribe");
+    public void onSubscribe(@NonNull Disposable d) {
+        LogUtil.i("onSubscribe");
     }
 
     @Override
     public void onNext(T t) {
-        LogUtil.e("onNext");
+        LogUtil.i("onNext");
     }
 
     @Override
@@ -63,7 +67,7 @@ public abstract class AbstractObserver<T> implements Observer<T> {
 
     @Override
     public void onComplete() {
-        LogUtil.e("onComplete");
+        LogUtil.i("onComplete");
     }
 
 }

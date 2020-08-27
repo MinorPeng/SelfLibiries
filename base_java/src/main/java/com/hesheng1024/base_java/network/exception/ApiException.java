@@ -1,6 +1,4 @@
-package com.hesheng1024.base_java.network.util;
-
-import androidx.annotation.NonNull;
+package com.hesheng1024.base_java.network.exception;
 
 /**
  * @author hesheng1024
@@ -8,9 +6,9 @@ import androidx.annotation.NonNull;
  */
 public class ApiException extends Exception {
     private final int mCode;
-    private final String mMessage;
+    private String mMessage;
 
-    public ApiException(int code, @NonNull String message) {
+    public ApiException(int code, String message) {
         this.mCode = code;
         this.mMessage = message;
     }
